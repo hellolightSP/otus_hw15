@@ -65,17 +65,6 @@ if [ $(date +%a) = "Sat" ] || [ $(date +%a) = "Sun" ]; then
   else
     exit 0
 fi
-[root@pam vagrant]# cat /usr/local/bin/login.sh
-#!/bin/bash
-if [ $(date +%a) = "Sat" ] || [ $(date +%a) = "Sun" ]; then
- if getent group admin | grep -qw "$PAM_USER"; then
-        exit 0
-      else
-          exit 1
-    fi
-  else
-    exit 0
-fi
 ```
 9. Добавим права на исполнение файла: 
 ```
